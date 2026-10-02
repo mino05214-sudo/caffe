@@ -1,0 +1,2260 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mino Caffe | 한 모금의 여유, 남부 이탈리아의 햇살을 담다</title>
+  <meta name="description" content="한 모금의 여유, 남부 이탈리아의 햇살을 담다 - Mino Caffe 공식 웹사이트" />
+  <meta property="og:title" content="Mino Caffe | 한 모금의 여유, 남부 이탈리아의 햇살을 담다" />
+  <meta property="og:description" content="한 모금의 여유, 남부 이탈리아의 햇살을 담다 - Mino Caffe 공식 웹사이트" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=Noto+Sans+KR:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #f8feff;
+      --navy: #1e3154;
+      --terracotta: #b5364d;
+      --cyan: #00c7f9;
+      --navy-light: #2c4675;
+      --navy-subtle: #f0f6fa;
+      --card-bg: #ffffff;
+      --text-main: #1e3154;
+      --text-muted: #52637a;
+      --font-sans: 'Noto Sans KR', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+      --header-height: 80px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      padding-top: var(--header-height);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Typography Utilities */
+    .mono {
+      font-family: var(--font-mono);
+      letter-spacing: -0.02em;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      background-color: rgba(181, 54, 77, 0.08);
+      padding: 0.35rem 0.85rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.3;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      font-weight: 400;
+    }
+
+    /* Fixed Header - Horizontal Layout */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      background: rgba(248, 254, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(30, 49, 84, 0.08);
+      z-index: 300;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--navy);
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      height: 44px;
+      width: 44px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .brand-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 500;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--terracotta);
+    }
+
+    /* Header Right Group - Far Top Right Alignment */
+    .header-right-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.75rem;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    /* Cart Badge Element in Header */
+    .cart-status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.5rem 0.95rem;
+      background-color: var(--navy-subtle);
+      border: 1px solid rgba(30, 49, 84, 0.14);
+      border-radius: 6px;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .cart-count-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      background-color: #e62e45;
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 999px;
+      box-shadow: 0 2px 6px rgba(230, 46, 69, 0.35);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cart-count-pill.bump {
+      transform: scale(1.3);
+    }
+
+    /* CTA Button - Standard Single Placeholder Requirement */
+    .cta-placeholder-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.1rem;
+      background-color: var(--terracotta);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(181, 54, 77, 0.2);
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .cta-placeholder-btn:hover {
+      background-color: #992b3f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(181, 54, 77, 0.3);
+    }
+
+    /* Top Right Login Button */
+    .login-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.1rem;
+      background-color: var(--navy);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(30, 49, 84, 0.12);
+      white-space: nowrap;
+    }
+
+    .login-btn:hover {
+      background-color: var(--navy-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(30, 49, 84, 0.22);
+    }
+
+    .login-btn.logged-in {
+      background-color: var(--terracotta);
+      box-shadow: 0 4px 12px rgba(181, 54, 77, 0.2);
+    }
+
+    .login-btn.logged-in:hover {
+      background-color: #992b3f;
+    }
+
+    /* Modals Overlay (CSS :target & JS .active trigger) */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(30, 49, 84, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 350;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 1.5rem;
+    }
+
+    .modal-overlay:target,
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 20px 50px rgba(30, 49, 84, 0.25);
+      position: relative;
+      border: 1px solid rgba(30, 49, 84, 0.1);
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal-overlay:target .modal-card,
+    .modal-overlay.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--navy-subtle);
+      color: var(--navy);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .modal-close:hover {
+      background: rgba(181, 54, 77, 0.1);
+      color: var(--terracotta);
+    }
+
+    /* 1-Second Google Login Button */
+    .google-login-btn {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background-color: #ffffff;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1.5px solid rgba(30, 49, 84, 0.2);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      box-shadow: 0 2px 8px rgba(30, 49, 84, 0.05);
+    }
+
+    .google-login-btn:hover {
+      background-color: var(--navy-subtle);
+      border-color: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .login-divider {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin: 1.2rem 0;
+    }
+
+    .login-divider::before,
+    .login-divider::after {
+      content: '';
+      flex: 1;
+      border-bottom: 1px solid rgba(30, 49, 84, 0.12);
+    }
+
+    .login-divider span {
+      padding: 0 0.75rem;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .form-input, .form-select {
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(30, 49, 84, 0.18);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      background-color: #ffffff;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(0, 199, 249, 0.15);
+    }
+
+    .form-submit-btn {
+      padding: 0.85rem;
+      background-color: var(--terracotta);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 0.5rem;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    .form-submit-btn:hover {
+      background-color: #992b3f;
+    }
+
+    .login-options {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .login-options a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .login-options a:hover {
+      color: var(--terracotta);
+    }
+
+    /* Radio Group Options in Modal */
+    .radio-option-group {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.2rem;
+    }
+
+    .radio-card-label {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem;
+      border: 1px solid rgba(30, 49, 84, 0.15);
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      background-color: var(--navy-subtle);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .radio-card-label:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+
+    /* Toast Notification (Top Right) */
+    .toast-container {
+      position: fixed;
+      top: 96px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      pointer-events: none;
+    }
+
+    .cart-toast {
+      background: var(--navy);
+      color: #ffffff;
+      padding: 0.9rem 1.35rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      box-shadow: 0 12px 28px rgba(30, 49, 84, 0.25);
+      border-left: 4px solid var(--terracotta);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .cart-toast.show {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 5rem 2rem 6rem;
+      background: linear-gradient(135deg, rgba(248,254,255,1) 0%, rgba(240,246,250,1) 100%);
+      overflow: hidden;
+    }
+
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-headline {
+      font-size: 3.25rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-headline span {
+      color: var(--terracotta);
+      display: block;
+    }
+
+    .hero-description {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(30, 49, 84, 0.12);
+      background-color: var(--card-bg);
+      padding: 0.5rem;
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* Brand Philosophy / Story */
+    .about-section {
+      padding: 6rem 2rem;
+      background-color: #ffffff;
+    }
+
+    .about-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .about-card {
+      background-color: var(--bg-color);
+      border-radius: 16px;
+      padding: 3rem;
+      border: 1px solid rgba(30, 49, 84, 0.06);
+      box-shadow: 0 10px 30px rgba(30, 49, 84, 0.04);
+    }
+
+    .about-text {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-quote {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      color: var(--terracotta);
+      padding-left: 1.2rem;
+      border-left: 3px solid var(--terracotta);
+      margin-top: 1.5rem;
+    }
+
+    .about-img-box {
+      position: relative;
+      border-radius: 16px;
+    }
+
+    .about-img-box img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 16px 32px rgba(30, 49, 84, 0.1);
+    }
+
+    /* Core Values */
+    .values-section {
+      padding: 6rem 2rem;
+      background-color: var(--bg-color);
+    }
+
+    .values-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .value-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 8px 24px rgba(30, 49, 84, 0.05);
+      border: 1px solid rgba(0, 199, 249, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(30, 49, 84, 0.1);
+    }
+
+    .value-num {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-bottom: 1rem;
+    }
+
+    .value-title-kr {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+
+    .value-title-en {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--terracotta);
+      margin-bottom: 1.2rem;
+    }
+
+    .value-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Craft & Roasting Section */
+    .craft-section {
+      padding: 6rem 2rem;
+      background: var(--navy);
+      color: #ffffff;
+      position: relative;
+    }
+
+    .craft-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .craft-content .section-title {
+      color: #ffffff;
+    }
+
+    .craft-content .section-tag {
+      background-color: rgba(0, 199, 249, 0.15);
+      color: var(--cyan);
+    }
+
+    .craft-desc {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .craft-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .craft-stat-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 1.25rem;
+      border-radius: 12px;
+    }
+
+    .craft-stat-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+      margin-bottom: 0.3rem;
+    }
+
+    .craft-stat-val {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .craft-image-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .craft-image-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 6rem 2rem;
+      background-color: var(--bg-color);
+    }
+
+    .products-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+    }
+
+    .product-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid rgba(30, 49, 84, 0.08);
+      box-shadow: 0 10px 30px rgba(30, 49, 84, 0.05);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-img-wrapper {
+      width: 100%;
+      height: 300px;
+      border-radius: 12px;
+      background-color: #fafafa;
+      margin-bottom: 1.75rem;
+      position: relative;
+    }
+
+    .product-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .product-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-meta-list {
+      list-style: none;
+      background: var(--navy-subtle);
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-size: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-meta-item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(30, 49, 84, 0.12);
+      padding-bottom: 0.4rem;
+    }
+
+    .product-meta-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .meta-key {
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .meta-val {
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .product-features {
+      font-size: 0.88rem;
+      color: var(--terracotta);
+      font-weight: 500;
+      background-color: rgba(181, 54, 77, 0.06);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* Coffee Ordering Section */
+    .order-section {
+      padding: 6rem 2rem;
+      background-color: #ffffff;
+      border-top: 1px solid rgba(30, 49, 84, 0.06);
+    }
+
+    .order-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .order-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .order-card {
+      background: var(--bg-color);
+      border-radius: 16px;
+      border: 1px solid rgba(30, 49, 84, 0.08);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 6px 20px rgba(30, 49, 84, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .order-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(30, 49, 84, 0.08);
+    }
+
+    .order-card-img-wrapper {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+
+    .order-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .order-card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .order-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.5rem;
+    }
+
+    .order-item-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .order-item-price {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--terracotta);
+    }
+
+    .order-item-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1rem;
+    }
+
+    .order-options {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .option-tag {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      background: var(--navy-subtle);
+      color: var(--navy);
+      font-weight: 500;
+      border: 1px solid rgba(30, 49, 84, 0.1);
+    }
+
+    .order-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .order-add-btn,
+    .add-to-cart-btn {
+      width: 100%;
+      padding: 0.75rem 1.2rem;
+      background-color: var(--navy);
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.2s, transform 0.2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+
+    .order-add-btn:hover,
+    .add-to-cart-btn:hover {
+      background-color: var(--terracotta);
+      transform: translateY(-1px);
+    }
+
+    .order-bar-container {
+      margin-top: 3.5rem;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 16px;
+      padding: 2.2rem 2.5rem;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      box-shadow: 0 12px 30px rgba(30, 49, 84, 0.15);
+    }
+
+    .order-bar-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .order-bar-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .order-bar-sub {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .order-now-btn {
+      padding: 0.85rem 1.8rem;
+      background-color: var(--cyan);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .order-now-btn:hover {
+      background-color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 199, 249, 0.3);
+    }
+
+    /* Customer Reviews */
+    .reviews-section {
+      padding: 6rem 2rem;
+      background-color: #ffffff;
+    }
+
+    .reviews-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 3.5rem;
+    }
+
+    .review-card {
+      background-color: var(--bg-color);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(30, 49, 84, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 6px 18px rgba(30, 49, 84, 0.03);
+    }
+
+    .review-quote {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .review-quote::before {
+      content: "“";
+      font-size: 2.5rem;
+      font-family: serif;
+      color: var(--terracotta);
+      line-height: 0;
+      display: inline-block;
+      margin-right: 0.2rem;
+      vertical-align: -0.4rem;
+    }
+
+    .review-quote::after {
+      content: "”";
+      font-size: 2.5rem;
+      font-family: serif;
+      color: var(--terracotta);
+      line-height: 0;
+      display: inline-block;
+      margin-left: 0.2rem;
+      vertical-align: -0.4rem;
+    }
+
+    .review-author {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--cyan);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Store Info & Operating Hours */
+    .visit-section {
+      padding: 6rem 2rem;
+      background: linear-gradient(180deg, var(--bg-color) 0%, #edf7f9 100%);
+    }
+
+    .visit-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .visit-info-box {
+      background: var(--card-bg);
+      padding: 3rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(30, 49, 84, 0.05);
+      border: 1px solid rgba(30, 49, 84, 0.08);
+    }
+
+    .info-group {
+      margin-bottom: 2rem;
+    }
+
+    .info-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-label {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--terracotta);
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .info-value {
+      font-size: 1.1rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .info-value a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .info-value a:hover {
+      color: var(--terracotta);
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+    }
+
+    .hours-table td {
+      padding: 0.6rem 0;
+      font-size: 0.95rem;
+      border-bottom: 1px dashed rgba(30, 49, 84, 0.1);
+    }
+
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .hours-day {
+      color: var(--navy);
+      font-weight: 600;
+      width: 40%;
+    }
+
+    .hours-time {
+      color: var(--text-muted);
+      text-align: right;
+      font-family: var(--font-mono);
+    }
+
+    .visit-map-box {
+      border-radius: 16px;
+      position: relative;
+      background-color: var(--card-bg);
+      padding: 0.5rem;
+      box-shadow: 0 10px 30px rgba(30, 49, 84, 0.05);
+    }
+
+    .visit-map-box img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--navy);
+      color: #ffffff;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1.5fr;
+      gap: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: 40px;
+      border-radius: 6px;
+    }
+
+    .footer-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .footer-tagline {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .footer-heading {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--cyan);
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 2rem auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: var(--font-mono);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      .order-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-container,
+      .about-grid,
+      .craft-container,
+      .visit-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .hero-headline {
+        font-size: 2.5rem;
+      }
+
+      .values-grid,
+      .products-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .order-bar-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-wrap: wrap;
+        padding: 0.5rem 1rem;
+      }
+
+      .nav-wrapper {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 0.4rem;
+      }
+
+      .nav-links {
+        gap: 1.2rem;
+      }
+
+      .order-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .hero {
+        padding: 3rem 1.5rem;
+      }
+
+      .about-card {
+        padding: 2rem;
+      }
+
+      .craft-image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Notification Container (Top Right) -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Fixed Header with Clean Horizontal Alignment -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="brand-logo-link">
+        <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/8G78JwpozhHdbg4ZfYg_J3?authuser=0" alt="Mino Caffe Logo" class="brand-logo-img">
+        <span class="brand-name">Mino Caffe</span>
+      </a>
+
+      <nav class="nav-wrapper">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">브랜드 소개</a></li>
+          <li><a href="#values" class="nav-link">핵심 가치</a></li>
+          <li><a href="#craft" class="nav-link">슬로우 로스팅</a></li>
+          <li><a href="#products" class="nav-link">원두 컬렉션</a></li>
+          <li><a href="#coffee-order" class="nav-link">커피 주문</a></li>
+          <li><a href="#reviews" class="nav-link">고객 후기</a></li>
+          <li><a href="#visit" class="nav-link">오시는 길</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right Top Group: Cart Badge, CTA Placeholder & Login Button -->
+      <div class="header-right-group">
+        <!-- Cart Status with Red Badge -->
+        <div class="cart-status-badge" id="header-cart-badge" title="장바구니 담긴 상품 수">
+          <span>🛒 Cart:</span>
+          <span class="cart-count-pill" id="cart-count-display">0</span>
+        </div>
+        <!-- Required Placeholder CTA (exactly one on page) -->
+        <a href="#" class="cta-placeholder-btn">[Your link here]</a>
+        <!-- Top Right Login Button -->
+        <a href="#login-modal" id="header-login-btn" class="login-btn">Login</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <span class="section-tag">Cozy Specialty Refuge</span>
+          <h1 class="hero-headline">
+            한 모금의 여유,
+            <span>남부 이탈리아의 햇살을 담다</span>
+          </h1>
+          <p class="hero-description">
+            바쁜 일상에 치여 진정한 쉼을 필요로 하는 2040 직장인을 위한 도심 속 안식처.
+            정직한 시간과 정성을 들이는 슬로우 로스팅 원두로 맑고 여유로운 일상의 아침을 선사합니다.
+          </p>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/bwW-PjiKS3CbI5zYaENkfL?authuser=0" alt="Mino Caffe exterior in a quiet street setting">
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section id="about" class="about-section">
+      <div class="about-container">
+        <span class="section-tag">Genuine Restoration</span>
+        <h2 class="section-title">방해받지 않고 온전히 몰입하는<br>나만의 사색과 휴식</h2>
+        <p class="section-subtitle">
+          Mino Caffe는 눈의 피로를 덜어주는 따스한 조명과 군더더기 없는 가구 배치를 통해
+          바쁜 도심 속에서 온전한 나만의 쉼에 집중할 수 있는 공간을 마련했습니다.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-card">
+            <p class="about-text">
+              지중해의 따사로운 햇살 아래 펼쳐지는 이탈리아 남부의 여유로운 아침을 연상시키는 cozy한 공간 경험.
+              Mino Caffe는 단순한 커피 판매를 넘어, 지친 일상 속 직장인들이 잠시 숨을 고르고 감각을 회복할 수 있는 따뜻한 쉼터를 제공합니다.
+            </p>
+            <p class="about-text">
+              동선 하나, 조명의 연출 하나에도 담백한 배려를 담아 사색과 대화가 자연스럽게 이어지는 도심 속 안식처가 되어드립니다.
+            </p>
+            <div class="about-quote">
+              "정직한 시간과 정성이 만든 한 잔의 온기로 당신의 하루를 따뜻하게 채웁니다."
+            </div>
+          </div>
+          <div class="about-img-box">
+            <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/bibEJpQIXyC3MIklP8hkVW?authuser=0" alt="Woman enjoying a quiet moment with warm coffee at Mino Caffe">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section id="values" class="values-section">
+      <div class="values-container">
+        <div style="text-align: center; margin: 0 auto;">
+          <span class="section-tag">Our Philosophy</span>
+          <h2 class="section-title">Mino Caffe가 지키는 3가지 약속</h2>
+          <p class="section-subtitle" style="margin: 0 auto;">
+            느림의 가치와 본질에 집중하는 삼박자로 완성하는 공간과 커피 경험
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <!-- Value 1 -->
+          <article class="value-card">
+            <div class="value-num">01 / CRAFT</div>
+            <h3 class="value-title-kr">진정성 있는 느림</h3>
+            <div class="value-title-en">Mindful Craft</div>
+            <p class="value-desc">
+              빠름을 요구하는 세상 속에서 정직한 시간과 정성을 고집합니다. 원두 고유의 개성을 극대화하는 슬로우 로스팅으로 한 잔의 완성도를 높입니다.
+            </p>
+          </article>
+
+          <!-- Value 2 -->
+          <article class="value-card">
+            <div class="value-num">02 / REST</div>
+            <h3 class="value-title-kr">온전한 쉼</h3>
+            <div class="value-title-en">Genuine Restoration</div>
+            <p class="value-desc">
+              방해받지 않고 온전히 나만의 생각과 감정에 집중할 수 있는 환경. 남부 이탈리아의 맑은 아침처럼 편안하고 여유로운 안식을 제안합니다.
+            </p>
+          </article>
+
+          <!-- Value 3 -->
+          <article class="value-card">
+            <div class="value-num">03 / SIMPLICITY</div>
+            <h3 class="value-title-kr">담백한 배려</h3>
+            <div class="value-title-en">Thoughtful Simplicity</div>
+            <p class="value-desc">
+              시각적 피로를 줄여주는 따스한 조명 연출과 절제된 가구 배치, 세심하게 설계된 동선으로 가장 편안한 모먼트를 제공합니다.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Craft & Roasting Section -->
+    <section id="craft" class="craft-section">
+      <div class="craft-container">
+        <div class="craft-content">
+          <span class="section-tag">Slow Roasting Process</span>
+          <h2 class="section-title">슬로우 로스팅으로 완성되는<br>남부 이탈리아의 깊은 풍미</h2>
+          <p class="craft-desc">
+            시간에 쫓기지 않고 원두 속 깊은 단맛과 은은한 산미를 정교하게 끌어내는 slow roasting process.
+            엄선된 산지의 원두가 가진 본연의 매력을 섬세한 조절을 통해 가장 아름다운 잔으로 끌어올립니다.
+          </p>
+
+          <div class="craft-stats">
+            <div class="craft-stat-item">
+              <div class="craft-stat-label">ROAST PROFILE</div>
+              <div class="craft-stat-val">Slow &amp; Mindful</div>
+            </div>
+            <div class="craft-stat-item">
+              <div class="craft-stat-label">AMBIENCE</div>
+              <div class="craft-stat-val">Warm &amp; Cozy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="craft-image-grid">
+          <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/bgiZ5v1BoBu2jYZWIUf47i?authuser=0" alt="Roasting machine drum close up with coffee beans">
+          <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/bx1WxDsi-9Z45cbazPHORZ?authuser=0" alt="Barista carefully crafting latte art under warm lighting">
+          <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/91FQMfK5Xc87bTAYg7Kk6d?authuser=0" alt="Portafilters displaying coffee making stages">
+          <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/93naos8zrMH5L4-5cSp4me?authuser=0" alt="Tulip latte art on dark wooden table">
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+      <div class="products-container">
+        <span class="section-tag">Signature Specialty Beans</span>
+        <h2 class="section-title">스페셜티 커피 컬렉션</h2>
+        <p class="section-subtitle">
+          정직한 슬로우 로스팅으로 완성한 Mino Caffe의 시그니처 원두 라인업입니다.
+        </p>
+
+        <div class="products-grid">
+          <!-- Product 1 -->
+          <article class="product-card">
+            <div>
+              <div class="product-img-wrapper">
+                <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/8VWZ542H0tEdjyeEDXR4Si?authuser=0" alt="Roaster’s Choice Collection trio packaging">
+              </div>
+              <h3 class="product-title">Roaster’s Choice Collection</h3>
+              <p class="product-desc">
+                A curated trio of our finest coffees, featuring diverse origins and processing methods to provide a complete tasting experience from around the world.
+              </p>
+
+              <ul class="product-meta-list">
+                <li class="product-meta-item">
+                  <span class="meta-key">Included Items</span>
+                  <span class="meta-val">Ethiopia Yirgacheffe, Colombia Huila, Brazilian Santos</span>
+                </li>
+                <li class="product-meta-item">
+                  <span class="meta-key">Tasting Scope</span>
+                  <span class="meta-val">Bright floral African notes to deep chocolatey South American profiles</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="product-features">
+                ★ Perfect for gifting or discovering your favorite daily brew across different roast spectrums.
+              </div>
+              <button type="button" class="add-to-cart-btn">Add to Cart 🛒</button>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <div>
+              <div class="product-img-wrapper">
+                <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/81tD5uUFvsleUDcTIAG_bK?authuser=0" alt="Roaster’s Ethiopia Guji coffee bag">
+              </div>
+              <h3 class="product-title">Roaster’s Ethiopia Guji</h3>
+              <p class="product-desc">
+                Experience the vibrant and complex flavors of Ethiopia with our premium Guji single-origin beans, roasted to perfection for a clean and aromatic cup.
+              </p>
+
+              <ul class="product-meta-list">
+                <li class="product-meta-item">
+                  <span class="meta-key">Roast Level</span>
+                  <span class="meta-val">Light Roast</span>
+                </li>
+                <li class="product-meta-item">
+                  <span class="meta-key">Flavor Profile</span>
+                  <span class="meta-val">Distinct notes of jasmine and stone fruit</span>
+                </li>
+                <li class="product-meta-item">
+                  <span class="meta-key">Net Weight</span>
+                  <span class="meta-val">12 oz (340g)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="product-features">
+                ★ Sustainably sourced, single-origin Arabica beans.
+              </div>
+              <button type="button" class="add-to-cart-btn">Add to Cart 🛒</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coffee Ordering Section -->
+    <section id="coffee-order" class="order-section">
+      <div class="order-container">
+        <span class="section-tag">Fresh Brewed Ordering</span>
+        <h2 class="section-title">스페셜티 커피 메뉴 &amp; 주문</h2>
+        <p class="section-subtitle">
+          슬로우 로스팅 원두와 부드러운 스팀 밀크로 바리스타가 섬세하게 내리는 카푸치노, 라떼 등 남부 이탈리아 스타일 커피를 주문해 보세요.
+        </p>
+
+        <div class="order-grid">
+          <!-- Coffee Item 1: Cappuccino -->
+          <article class="order-card">
+            <div class="order-card-img-wrapper">
+              <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/9-4YIkHI7NJ9vt6ud7m4zj?authuser=0" alt="Cappuccino with velvet foam art" class="order-card-img">
+            </div>
+            <div class="order-card-content">
+              <div>
+                <div class="order-item-header">
+                  <h3 class="order-item-title">남부 이탈리아 카푸치노</h3>
+                  <span class="order-item-price">6,000원</span>
+                </div>
+                <p class="order-item-desc">
+                  촘촘하고 벨벳 같은 실키 밀크 폼과 딥 에스프레소의 고소한 다크 초콜릿 풍미가 한 잔에 아늑하게 담긴 시그니처 카푸치노.
+                </p>
+                <div class="order-options">
+                  <span class="option-tag">HOT Only</span>
+                  <span class="option-tag">시나몬 파우더</span>
+                  <span class="option-tag">슬로우 로스트</span>
+                </div>
+              </div>
+              <div class="order-action-row">
+                <button type="button" class="order-add-btn add-to-cart-btn">Add to Cart ☕</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coffee Item 2: Velvet Latte -->
+          <article class="order-card">
+            <div class="order-card-img-wrapper">
+              <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/93naos8zrMH5L4-5cSp4me?authuser=0" alt="Tulip latte art on dark wooden table" class="order-card-img">
+            </div>
+            <div class="order-card-content">
+              <div>
+                <div class="order-item-header">
+                  <h3 class="order-item-title">시그니처 벨벳 라떼</h3>
+                  <span class="order-item-price">6,500원</span>
+                </div>
+                <p class="order-item-desc">
+                  바리스타의 정교한 튤립 라떼 아트와 부드러운 목넘김, 스페셜티 원두 본연의 은은한 단맛을 즐길 수 있는 카페 라떼.
+                </p>
+                <div class="order-options">
+                  <span class="option-tag">HOT / ICED</span>
+                  <span class="option-tag">우유 변경 가능</span>
+                  <span class="option-tag">Guji Blend</span>
+                </div>
+              </div>
+              <div class="order-action-row">
+                <button type="button" class="order-add-btn add-to-cart-btn">Add to Cart ☕</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coffee Item 3: Vanilla Bean Latte -->
+          <article class="order-card">
+            <div class="order-card-img-wrapper">
+              <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/8KVGr7IKQsW5Qp2t3oM48w?authuser=0" alt="Latte with heart foam art and cinnamon sticks" class="order-card-img">
+            </div>
+            <div class="order-card-content">
+              <div>
+                <div class="order-item-header">
+                  <h3 class="order-item-title">아로마 바닐라 빈 라떼</h3>
+                  <span class="order-item-price">7,000원</span>
+                </div>
+                <p class="order-item-desc">
+                  천연 바닐라 빈의 향긋하고 고급스러운 달콤함이 에스프레소의 깊은 바디감과 어우러진 수제 시럽 라떼.
+                </p>
+                <div class="order-options">
+                  <span class="option-tag">HOT / ICED</span>
+                  <span class="option-tag">천연 바닐라 빈</span>
+                  <span class="option-tag">Rich Body</span>
+                </div>
+              </div>
+              <div class="order-action-row">
+                <button type="button" class="order-add-btn add-to-cart-btn">Add to Cart ☕</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coffee Item 4: Flat White -->
+          <article class="order-card">
+            <div class="order-card-img-wrapper">
+              <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/bQiKUy6YQk982pcHNuDkb8?authuser=0" alt="Flat white ceramic cup with latte art" class="order-card-img">
+            </div>
+            <div class="order-card-content">
+              <div>
+                <div class="order-item-header">
+                  <h3 class="order-item-title">이탈리안 플랫 화이트</h3>
+                  <span class="order-item-price">5,800원</span>
+                </div>
+                <p class="order-item-desc">
+                  에스프레소 리스트레토 샷의 진함과 스팀 밀크의 스무스한 레이어가 밀착되어 커피 향을 더욱 강렬하게 전합니다.
+                </p>
+                <div class="order-options">
+                  <span class="option-tag">HOT Only</span>
+                  <span class="option-tag">Double Ristretto</span>
+                  <span class="option-tag">Micro Foam</span>
+                </div>
+              </div>
+              <div class="order-action-row">
+                <button type="button" class="order-add-btn add-to-cart-btn">Add to Cart ☕</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coffee Item 5: Classic Espresso -->
+          <article class="order-card">
+            <div class="order-card-img-wrapper">
+              <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/91FQMfK5Xc87bTAYg7Kk6d?authuser=0" alt="Fresh espresso extraction portafilter" class="order-card-img">
+            </div>
+            <div class="order-card-content">
+              <div>
+                <div class="order-item-header">
+                  <h3 class="order-item-title">이탈리안 클래식 에스프레소</h3>
+                  <span class="order-item-price">5,000원</span>
+                </div>
+                <p class="order-item-desc">
+                  슬로우 로스팅 원두 본연의 깊은 단맛과 스파이시한 크레마가 집약된 남부 이탈리아 정통 스타일 에스프레소.
+                </p>
+                <div class="order-options">
+                  <span class="option-tag">HOT Only</span>
+                  <span class="option-tag">설탕 동봉</span>
+                  <span class="option-tag">Rich Crema</span>
+                </div>
+              </div>
+              <div class="order-action-row">
+                <button type="button" class="order-add-btn add-to-cart-btn">Add to Cart ☕</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coffee Item 6: Melting Cream Einspanner -->
+          <article class="order-card">
+            <div class="order-card-img-wrapper">
+              <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/b8jAV6DyI8S61f3fNQBk6v?authuser=0" alt="Einspanner coffee with thick cream foam" class="order-card-img">
+            </div>
+            <div class="order-card-content">
+              <div>
+                <div class="order-item-header">
+                  <h3 class="order-item-title">멜팅 크림 아인슈페너</h3>
+                  <span class="order-item-price">7,200원</span>
+                </div>
+                <p class="order-item-desc">
+                  진한 라떼 베이스 위에 묵직하고 쫀득한 수제 수프림 생크림을 올린 달콤쌉싸름한 시그니처 쉼 메뉴.
+                </p>
+                <div class="order-options">
+                  <span class="option-tag">ICED / HOT</span>
+                  <span class="option-tag">수제 생크림</span>
+                  <span class="option-tag">Signature</span>
+                </div>
+              </div>
+              <div class="order-action-row">
+                <button type="button" class="order-add-btn add-to-cart-btn">Add to Cart ☕</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="order-bar-container">
+          <div class="order-bar-info">
+            <div class="order-bar-title">원하는 스페셜티 커피를 바로 선택해 주문하세요</div>
+            <div class="order-bar-sub">로그인 후 주문하시면 픽업 알림 서비스와 멤버십 포인트 적립 혜택을 받으실 수 있습니다.</div>
+          </div>
+          <a href="#order-modal" class="order-now-btn">커피 간편 주문 시작하기 ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Divider Texture -->
+    <div data-alt="Soft Mediterranean morning sunlight shining through sheer curtains onto a clean wooden tabletop with warm shadows, peaceful atmosphere, no text" style="background-image: url('https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/aC-mpMugic1akK2_DDP_4m?authuser=0'); background-size: cover; height: 260px; background-position: center; border-top: 1px solid rgba(30,49,84,0.08); border-bottom: 1px solid rgba(30,49,84,0.08);"></div>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews" class="reviews-section">
+      <div class="reviews-container">
+        <span class="section-tag">Guest Experiences</span>
+        <h2 class="section-title">Mino Caffe를 찾은 분들의 이야기</h2>
+        <p class="section-subtitle">
+          도심 속 아늑한 안식처에서 진정한 쉼을 만난 고객님들의 솔직한 후기입니다.
+        </p>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <p class="review-quote">
+              남 이탈리아 여행중에 마셨던 espresso의 깊은 풍미를 그대로 느낄수 있는 곳, 따뜻하고 편안한 분위기 덕분에 매주 찾게 됩니다
+            </p>
+            <div class="review-author">
+              <span>●</span> Verified Visitor
+            </div>
+          </div>
+
+          <div class="review-card">
+            <p class="review-quote">
+              정성스럽게 로스팅한 원두라 그런지 향이 정말 남달라요. 도심속에서 조용히 힐링하고 싶을 때 가장 먼저 생각나는 카페입니다
+            </p>
+            <div class="review-author">
+              <span>●</span> Coffee Enthusiast
+            </div>
+          </div>
+
+          <div class="review-card">
+            <p class="review-quote">
+              친절한 바리스타와 아늑한 조명, 그리고 완벽한 커피 한 잔. 주말 오전을 보내기에 이보다 더 좋은 장소는 없어요
+            </p>
+            <div class="review-author">
+              <span>●</span> Regular Guest
+            </div>
+          </div>
+
+          <div class="review-card">
+            <p class="review-quote">
+              원두 구독 서비스를 이용중인데 매번 신선하고 고소한 향에 감탄합니다. 정직한 로스팅이 느껴집니다.
+            </p>
+            <div class="review-author">
+              <span>●</span> Subscription Customer
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit & Operating Hours -->
+    <section id="visit" class="visit-section">
+      <div class="visit-container">
+        <div class="visit-info-box">
+          <span class="section-tag">Visit Us</span>
+          <h2 class="section-title" style="font-size: 1.8rem;">오시는 길 &amp; 이용 안내</h2>
+
+          <div class="info-group">
+            <div class="info-label">Address</div>
+            <div class="info-value">경기 양주 산성로 523, 양주, 82</div>
+          </div>
+
+          <div class="info-group">
+            <div class="info-label">Website</div>
+            <div class="info-value">
+              <a href="https://beanroasters.example.com" target="_blank">beanroasters.example.com ↗</a>
+            </div>
+          </div>
+
+          <div class="info-group">
+            <div class="info-label">Operating Hours</div>
+            <table class="hours-table">
+              <tbody>
+                <tr>
+                  <td class="hours-day">월요일 (Mon)</td>
+                  <td class="hours-time">10:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                  <td class="hours-day">화요일 (Tue)</td>
+                  <td class="hours-time">11:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                  <td class="hours-day">수요일 (Wed)</td>
+                  <td class="hours-time">10:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                  <td class="hours-day">목요일 (Thu)</td>
+                  <td class="hours-time">10:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                  <td class="hours-day">금요일 (Fri)</td>
+                  <td class="hours-time">10:00 AM - 10:00 PM</td>
+                </tr>
+                <tr>
+                  <td class="hours-day">토요일 (Sat)</td>
+                  <td class="hours-time">10:00 AM - 10:00 PM</td>
+                </tr>
+                <tr>
+                  <td class="hours-day">일요일 (Sun)</td>
+                  <td class="hours-time">10:00 AM - 6:00 PM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="visit-map-box">
+          <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/8KVGr7IKQsW5Qp2t3oM48w?authuser=0" alt="Cozy atmosphere at Mino Caffe table with coffee and warm ambiance">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Login Modal Overlay -->
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Mino Caffe 로그인</h3>
+        <a href="#" id="login-modal-close" class="modal-close" aria-label="닫기">×</a>
+      </div>
+
+      <!-- 1-Second Google Login Button -->
+      <button type="button" id="google-fast-login-btn" class="google-login-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+          <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+          <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.6-.4-2.5s.2-1.7.4-2.5L1.6 7C.6 9 0 11.2 0 13.5s.6 4.5 1.6 6.5l3.7-2.8z"/>
+          <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 20.9 7.4 24 12 24z"/>
+        </svg>
+        구글 계정으로 1초 로그인
+      </button>
+
+      <div class="login-divider">
+        <span>또는 일반 아이디 로그인</span>
+      </div>
+
+      <form id="standard-login-form" class="login-form" action="#" method="get">
+        <div class="form-group">
+          <label class="form-label" for="login-id">아이디 (또는 이메일)</label>
+          <input type="text" id="login-id" class="form-input" placeholder="아이디 또는 이메일을 입력하세요">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="login-password">비밀번호</label>
+          <input type="password" id="login-password" class="form-input" placeholder="비밀번호를 입력하세요">
+        </div>
+        <button type="submit" id="submit-login-btn" class="form-submit-btn">로그인하기</button>
+        <div class="login-options">
+          <a href="#">비밀번호 찾기</a>
+          <a href="#">회원가입하기</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Coffee Order Modal Overlay -->
+  <div id="order-modal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">☕ 스페셜티 커피 주문하기</h3>
+        <a href="#" class="modal-close" aria-label="닫기">×</a>
+      </div>
+      <form class="login-form" action="#" method="get" onsubmit="return false;">
+        <div class="form-group">
+          <label class="form-label" for="coffee-menu-select">커피 메뉴 선택</label>
+          <select id="coffee-menu-select" class="form-select">
+            <option value="cappuccino">남부 이탈리아 카푸치노 (6,000원)</option>
+            <option value="velvet-latte">시그니처 벨벳 라떼 (6,500원)</option>
+            <option value="vanilla-latte">아로마 바닐라 빈 라떼 (7,000원)</option>
+            <option value="flat-white">이탈리안 플랫 화이트 (5,800원)</option>
+            <option value="espresso">이탈리안 클래식 에스프레소 (5,000원)</option>
+            <option value="einspanner">멜팅 크림 아인슈페너 (7,200원)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">음료 온도</label>
+          <div class="radio-option-group">
+            <label class="radio-card-label"><input type="radio" name="temp" value="hot" checked="" style="margin-right:0.3rem;"> HOT 🔥</label>
+            <label class="radio-card-label"><input type="radio" name="temp" value="iced" style="margin-right:0.3rem;"> ICED 🧊</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="milk-select">우유 선택</label>
+          <select id="milk-select" class="form-select">
+            <option value="standard">기본 오리지널 우유</option>
+            <option value="oat">귀리유 (오트 밀크) (+500원)</option>
+            <option value="soy">두유 (소이 밀크)</option>
+            <option value="lowfat">저지방 우유</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="order-qty">수량</label>
+          <select id="order-qty" class="form-select">
+            <option value="1">1 잔</option>
+            <option value="2">2 잔</option>
+            <option value="3">3 잔</option>
+            <option value="4">4 잔</option>
+          </select>
+        </div>
+
+        <button type="button" class="form-submit-btn add-to-cart-btn">Add to Cart (장바구니 담기)</button>
+        <a href="#order-success" class="form-submit-btn" style="background-color: var(--navy); margin-top: 0.2rem;">바로 주문하기 완료</a>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Confirmation Modal -->
+  <div id="order-success" class="modal-overlay">
+    <div class="modal-card" style="text-align: center;">
+      <div style="font-size: 3rem; margin-bottom: 0.5rem;">☕✨</div>
+      <h3 class="modal-title" style="margin-bottom: 0.75rem;">주문이 접수되었습니다!</h3>
+      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+        Mino Caffe 바리스타가 정직한 슬로우 로스팅 원두로 정성스럽게 정성을 담아 준비해 드리겠습니다.
+      </p>
+      <a href="#" class="form-submit-btn">확인</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <img src="https://labs.google.com/pomelli_downloads/websites/a6sb_ZnHgGOeXscJ430O2E/resources/8G78JwpozhHdbg4ZfYg_J3?authuser=0" alt="Mino Caffe Logo" class="footer-logo">
+          <span class="footer-title">Mino Caffe</span>
+        </div>
+        <p class="footer-tagline">한 모금의 여유, 남부 이탈리아의 햇살을 담다</p>
+        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.6); margin-top: 0.5rem;">
+          경기 양주 산성로 523, 양주, 82
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-heading">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="#about">브랜드 소개</a></li>
+          <li><a href="#values">핵심 가치</a></li>
+          <li><a href="#craft">슬로우 로스팅</a></li>
+          <li><a href="#products">원두 컬렉션</a></li>
+          <li><a href="#coffee-order">커피 주문</a></li>
+          <li><a href="#reviews">고객 후기</a></li>
+          <li><a href="#visit">오시는 길</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-heading">Online Store</div>
+        <p style="font-size: 0.88rem; color: rgba(255,255,255,0.7); margin-bottom: 0.75rem;">
+          신선하게 로스팅한 원두를 온라인에서도 만나보실 수 있습니다.
+        </p>
+        <a href="https://beanroasters.example.com" target="_blank" style="color: var(--cyan); text-decoration: none; font-size: 0.9rem; font-family: var(--font-mono);">
+          https://beanroasters.example.com ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>Mino Caffe. All rights reserved.</div>
+      <div>Cozy Specialty Coffee &amp; Space</div>
+    </div>
+  </footer>
+
+  <div style="text-align:right;padding:16px"><a href="https://support.google.com/legal/answer/3110420" target="_blank" style="color:inherit;text-decoration:none;font-size:12px">Report legal issue</a></div>
+
+  <!-- Interactive Features Script: Add to Cart & Member Login -->
+  <script>
+    (function() {
+      const CART_STORAGE_KEY = 'mino_caffe_cart_count';
+      const AUTH_STORAGE_KEY = 'mino_caffe_logged_in_user';
+
+      const cartCountDisplay = document.getElementById('cart-count-display');
+      const toastContainer = document.getElementById('toast-container');
+      const headerLoginBtn = document.getElementById('header-login-btn');
+      const loginModal = document.getElementById('login-modal');
+      const loginModalClose = document.getElementById('login-modal-close');
+      const googleFastLoginBtn = document.getElementById('google-fast-login-btn');
+      const standardLoginForm = document.getElementById('standard-login-form');
+
+      // 1. Initialize & Sync Cart Count with localStorage
+      function getCartCount() {
+        const saved = localStorage.getItem(CART_STORAGE_KEY);
+        const parsed = parseInt(saved, 10);
+        return isNaN(parsed) || parsed < 0 ? 0 : parsed;
+      }
+
+      function updateCartDisplay(count, animate) {
+        if (!cartCountDisplay) return;
+        cartCountDisplay.textContent = String(count);
+        if (animate) {
+          cartCountDisplay.classList.remove('bump');
+          void cartCountDisplay.offsetWidth;
+          cartCountDisplay.classList.add('bump');
+          setTimeout(function() {
+            cartCountDisplay.classList.remove('bump');
+          }, 250);
+        }
+      }
+
+      function showToast(message) {
+        if (!toastContainer) return;
+        const toast = document.createElement('div');
+        toast.className = 'cart-toast';
+        toast.textContent = message;
+        toastContainer.appendChild(toast);
+
+        requestAnimationFrame(function() {
+          toast.classList.add('show');
+        });
+
+        setTimeout(function() {
+          toast.classList.remove('show');
+          setTimeout(function() {
+            if (toast.parentNode) {
+              toast.parentNode.removeChild(toast);
+            }
+          }, 260);
+        }, 2000);
+      }
+
+      function handleAddToCart(e) {
+        if (e) e.preventDefault();
+        const nextCount = getCartCount() + 1;
+        localStorage.setItem(CART_STORAGE_KEY, String(nextCount));
+        updateCartDisplay(nextCount, true);
+        showToast('☕ 장바구니 에 상품이 담겼습니다!');
+      }
+
+      function bindAddToCartButtons() {
+        const allButtons = document.querySelectorAll('.add-to-cart-btn, button, a');
+        allButtons.forEach(function(el) {
+          const text = (el.textContent || '').trim();
+          if (el.classList.contains('add-to-cart-btn') || text.includes('Add to Cart')) {
+            if (!el.dataset.cartBound) {
+              el.dataset.cartBound = 'true';
+              el.addEventListener('click', handleAddToCart);
+            }
+          }
+        });
+      }
+
+      // 2. Member Login & Data Storage Management
+      function isUserLoggedIn() {
+        return localStorage.getItem(AUTH_STORAGE_KEY) === '권순택';
+      }
+
+      function updateAuthUI() {
+        if (!headerLoginBtn) return;
+        if (isUserLoggedIn()) {
+          headerLoginBtn.textContent = '권순택님(로그아웃)';
+          headerLoginBtn.classList.add('logged-in');
+          headerLoginBtn.setAttribute('href', '#logout');
+        } else {
+          headerLoginBtn.textContent = 'Login';
+          headerLoginBtn.classList.remove('logged-in');
+          headerLoginBtn.setAttribute('href', '#login-modal');
+        }
+      }
+
+      function openLoginModal() {
+        if (!loginModal) return;
+        loginModal.classList.add('active');
+        window.location.hash = 'login-modal';
+      }
+
+      function closeLoginModal() {
+        if (!loginModal) return;
+        loginModal.classList.remove('active');
+        if (window.location.hash === '#login-modal') {
+          history.replaceState(null, document.title, window.location.pathname + window.location.search);
+        }
+      }
+
+      function performLogin() {
+        localStorage.setItem(AUTH_STORAGE_KEY, '권순택');
+        updateAuthUI();
+        closeLoginModal();
+      }
+
+      function performLogout() {
+        localStorage.removeItem(AUTH_STORAGE_KEY);
+        updateAuthUI();
+      }
+
+      if (headerLoginBtn) {
+        headerLoginBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          if (isUserLoggedIn()) {
+            performLogout();
+          } else {
+            openLoginModal();
+          }
+        });
+      }
+
+      if (loginModalClose) {
+        loginModalClose.addEventListener('click', function(e) {
+          e.preventDefault();
+          closeLoginModal();
+        });
+      }
+
+      if (loginModal) {
+        loginModal.addEventListener('click', function(e) {
+          if (e.target === loginModal) {
+            closeLoginModal();
+          }
+        });
+      }
+
+      if (googleFastLoginBtn) {
+        googleFastLoginBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          performLogin();
+        });
+      }
+
+      if (standardLoginForm) {
+        standardLoginForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          performLogin();
+        });
+      }
+
+      updateCartDisplay(getCartCount(), false);
+      bindAddToCartButtons();
+      updateAuthUI();
+    })();
+  </script>
+</body>
+</html>
