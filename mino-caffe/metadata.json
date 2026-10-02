@@ -1,0 +1,6 @@
+{
+  "name": "Mino Caffe",
+  "description": "한 모금의 여유, 남부 이탈리아의 햇살을 담다 - Mino Caffe 공식 웹사이트",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
